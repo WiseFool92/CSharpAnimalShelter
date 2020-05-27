@@ -5,13 +5,38 @@ using System.Linq;
 
 namespace AnimalShelter.Controllers
 {
-  public class ItemsController : Controller
+  public class AnimalController : Controller
   {
     private readonly AnimalShelterContext _db;
 
     public AnimalController(AnimalShelterContext db)
     {
       _db = db;
+    }
+
+    public ActionResult Index()
+    {
+      List<Animals> model = _db.Animals.ToList();
+      return View("Index", model);
+    }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Animals animal)
+    {
+      _db.Animals.Add(animal);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      Animals thisAnimal = _db.Animals.FirstOrDefault(animals => animals.AnimalId == id);
+      return View("Details", thisAnimal);
     }
   }
 }

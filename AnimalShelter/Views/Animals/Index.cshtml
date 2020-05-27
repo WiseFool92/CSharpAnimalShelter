@@ -8,7 +8,7 @@
 <h1>Animals</h1>
 
 <ul>
-  @foreach(Animal animal in Model)
+  @foreach(Animals animal in Model)
   {
     <li>@Html.ActionLink($"{animal.Description}", "Details", new { id = animal.AnimalId })</li>
   }
