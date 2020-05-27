@@ -10,6 +10,11 @@
 <ul>
   @foreach(Animals animal in Model)
   {
-    <li>@Html.ActionLink($"{animal.Description}", "Details", new { id = animal.AnimalsId })</li>
+    <li>@Html.ActionLink($"{animal.Name}", "Details", new { id = animal.AnimalsId })</li>
   }
 </ul>
+
+<form action="/Animals/Index" method="POST">
+    <input type="text" id="searchParameter" name="searchParameter"/>
+    <button class="btn" type="submit">Submit</button>
+</form>
