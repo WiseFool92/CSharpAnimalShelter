@@ -1,6 +1,6 @@
  <img src='~/img/logo.png' alt="Animal Shelter Logo" height="165px" width="165px" class="logo">
   <ul class="nav nav-tabs" class="nav">
     <li role="presentation" class="active"><a href="/">Home</a></li>
-    <li role="presentation"><a href="/animal">View Animals</a></li>
-    <li role="presentation"><a href='/animal/create'>Add an Animal</a></li>
+    <li role="presentation">@Html.ActionLink("See all Animals", "Index", "Animals")</li>
+    <li role="presentation">@Html.ActionLink("Add new Animal", "Create", "Animals")</li>
   </ul>

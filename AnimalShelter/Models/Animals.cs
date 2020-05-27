@@ -5,7 +5,7 @@ namespace AnimalShelter.Models
 {
   public class Animals
   {
-    public int AnimalId { get; set; }
+    public int AnimalsId { get; set; }
     public string Description { get; set; }
   }
 }
